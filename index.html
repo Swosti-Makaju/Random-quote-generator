@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    }
+
+    .quote-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 400px;
+      transition: transform 0.3s ease;
+    }
+
+    .quote-box:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #fcb69f;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #fa9c81;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quote-box">
+    <h2 id="quote">Click the button to get a quote! 💡</h2>
+    <button onclick="newQuote()">New Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Believe you can and you're halfway there.💓",
+      "The future depends on what you do today.😉",
+      "Dream big and dare to fail.",
+      "Push yourself, because no one else is going to do it for you.",
+      "Don’t stop when you’re tired. Stop when you’re done.",
+      "Hustle in silence and let your success make the noise.",
+      "Success doesn’t come to you. You go to it."
+    ];
+
+    function newQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").innerText = quotes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
